@@ -1,6 +1,6 @@
 <template>
     <div class="main bg-white   flex flex-col items-center">
-        <img v-if="item.icon !== ''" v-bind:src="item?.icon" alt="" class="mt-5 ">
+        <img class="icon mt-5 " v-if="item.icon !== ''" v-bind:src="item?.icon" alt="icon">
         <h3 class="name mt-6">{{ item.name }}</h3>
         <p class="description mb-10 mt-4" :class="item.icon == '' ? 'mb-4' : 'mb-10'">{{ item.description }}</p>
         <RouterLink v-if="item.icon == ''" :to="{ name: 'Services' }" class="order_now decoration-none">
@@ -20,6 +20,11 @@ const props = defineProps<{
 .main {
     width: calc(100% / 3 - 10px);
     max-width: 310px;
+
+    .icon {
+        min-width: 68px;
+        min-height: 68px;
+    }
 
     .name {
         font-family: 'Inter';
