@@ -1,4 +1,21 @@
-import { defineStore } from 'pinia';
+
+export type Social = {
+    icon: string,
+    link: string
+}
+export type Info = {
+    key: string,
+    value: string
+}
+export type Languages = {
+    name: string,
+    degree: string,
+    scores: number
+}
+export type Skills = {
+    name: string,
+    scores: number
+}
 export type Router = {
     name: string,
     icon: string

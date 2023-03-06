@@ -1,135 +1,107 @@
-<script lang="ts">
-interface Social {
-    icon: string,
-    link: string
-}
-interface Info {
-    key: string,
-    value: string
-}
-interface Languages {
-    name: string,
-    degree: string,
-    scores: number
-}
-interface Skills {
-    name: string,
-    scores: number
-}
+<script setup lang="ts">
+import type { Social, Info, Languages, Skills } from '@/types'
 
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-    setup() {
-        const icons: Social[] = [
-            {
-                icon: 'icon-Icons-facebook',
-                link: '#'
-            },
-            {
-                icon: 'icon-Icons-instagram',
-                link: '#'
-            },
-            {
-                icon: 'icon-Icons-twitter',
-                link: '#'
-            },
-            {
-                icon: 'icon-linkedin',
-                link: '#'
-            },
-            {
-                icon: 'icon-Icons-Youtube',
-                link: '#'
-            },
-            {
-                icon: 'icon-Icons-dribbble',
-                link: '#'
-            },
-        ]
-        const info: Info[] = [
-            {
-                key: 'Age:',
-                value: '23'
-            },
-            {
-                key: 'Residence:',
-                value: 'BD'
-            },
-            {
-                key: 'Freelance:',
-                value: 'Available'
-            },
-            {
-                key: 'Address:',
-                value: 'Dhaka,Bangladesh'
-            },
-        ]
-        const languages: Languages[] = [
-            {
-                name: 'Bangla',
-                degree: 'Native',
-                scores: 100
-            },
-            {
-                name: 'English',
-                degree: 'Intermediate',
-                scores: 60
-            },
-            {
-                name: 'Russian',
-                degree: 'Pre-intermediate',
-                scores: 40
-            },
-        ]
-        const skills: Skills[] = [
-            {
-                name: 'HTML',
-                scores: 80
-            },
-            {
-                name: 'CSS',
-                scores: 80
-            },
-            {
-                name: 'Javascript',
-                scores: 60
-            },
-            {
-                name: 'Typescript',
-                scores: 50
-            },
-            {
-                name: 'Vue 3',
-                scores: 70
-            },
-            {
-                name: 'Pinia',
-                scores: 60
-            }
-        ]
-        const extrSkills: string[] = [
-            "Bootstrap, Materialize",
-            "Stylus, Sass, Less",
-            "Gulp, Webpack, Grunt",
-            "GIT Knowledge"
-        ]
-        return {
-            icons,
-            info,
-            languages,
-            skills,
-            extrSkills
-        }
+const icons: Social[] = [
+    {
+        icon: 'icon-Icons-facebook',
+        link: '#'
     },
-})
+    {
+        icon: 'icon-Icons-instagram',
+        link: '#'
+    },
+    {
+        icon: 'icon-Icons-twitter',
+        link: '#'
+    },
+    {
+        icon: 'icon-linkedin',
+        link: '#'
+    },
+    {
+        icon: 'icon-Icons-Youtube',
+        link: '#'
+    },
+    {
+        icon: 'icon-Icons-dribbble',
+        link: '#'
+    },
+]
+const info: Info[] = [
+    {
+        key: 'Age:',
+        value: '23'
+    },
+    {
+        key: 'Residence:',
+        value: 'BD'
+    },
+    {
+        key: 'Freelance:',
+        value: 'Available'
+    },
+    {
+        key: 'Address:',
+        value: 'Dhaka,Bangladesh'
+    },
+]
+const languages: Languages[] = [
+    {
+        name: 'Bangla',
+        degree: 'Native',
+        scores: 100
+    },
+    {
+        name: 'English',
+        degree: 'Intermediate',
+        scores: 60
+    },
+    {
+        name: 'Russian',
+        degree: 'Pre-intermediate',
+        scores: 40
+    },
+]
+const skills: Skills[] = [
+    {
+        name: 'HTML',
+        scores: 80
+    },
+    {
+        name: 'CSS',
+        scores: 80
+    },
+    {
+        name: 'Javascript',
+        scores: 60
+    },
+    {
+        name: 'Typescript',
+        scores: 50
+    },
+    {
+        name: 'Vue 3',
+        scores: 70
+    },
+    {
+        name: 'Pinia',
+        scores: 60
+    }
+]
+const extrSkills: string[] = [
+    "Bootstrap, Materialize",
+    "Stylus, Sass, Less",
+    "Gulp, Webpack, Grunt",
+    "GIT Knowledge"
+]
+
 </script>
 <template>
     <div class="main   bg-white">
         <div class="main-container flex justify-center items-center flex-col bg-white">
             <div class="personal flex justify-center items-center flex-col mt-13 mb-6">
                 <div class="profile_image mb-7">
-                    <img src="../image/Your Image 1.png" alt="">
+                    <img src="../image/YourImage.png" alt="">
                 </div>
                 <h2 class="full_name mb-4">
                     Rayan Adlardard

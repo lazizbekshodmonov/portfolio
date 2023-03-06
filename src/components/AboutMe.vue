@@ -18,7 +18,7 @@ description.value = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et
             </RouterLink>
         </div>
         <div class="image_content ml-3 mt-2">
-            <img src="../image/Your Image 1.png" alt="">
+            <img src="../image/YourImage.png" alt="">
         </div>
     </div>
 </template>
