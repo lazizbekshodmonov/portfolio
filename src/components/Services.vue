@@ -1,52 +1,43 @@
-<template>
-    <div class="services flex flex-col items-center">
-        <Title class="text-center" :title="'my services'" />
-        <Description class="description text-center mb-12"
-            :description="'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum'" />
-        <div class="services flex flex-wrap gap-3">
-            <Servicevue :item="item" v-for="item in boundedArray" />
-        </div>
-    </div>
-</template>
-
 <script setup lang="ts">
 import type { Service } from '@/types';
 import { ref } from 'vue';
 import Description from './ui-components/Description.vue';
 import Servicevue from './ui-components/Service.vue';
 import Title from './ui-components/Title.vue';
+//Icons
+
+import WebDevelopment from "/src/assets/icons/coding.svg"
+import UIUXDesign from '/src/assets/icons/illustration.svg'
+import SoundDesign from '/src/assets/icons/Microphone.svg'
+import GameDesign from '/src/assets/icons/game-development.svg'
+import Phtotographer from '/src/assets/icons/Photographer.svg'
 const services = ref<Service[]>([])
 
 services.value = [
     {
-        icon: "/src/assets/icons/coding.svg",
+        icon: WebDevelopment,
         name: 'web development',
         description: 'Blog, E-Commerce'
     },
     {
-        icon: '/src/assets/icons/illustration.svg',
-        name: 'web development',
-        description: 'Blog, E-Commerce'
+        icon: UIUXDesign,
+        name: 'uI/uX design',
+        description: 'Mobile app, website design'
     },
     {
-        icon: '/src/assets/icons/Microphone.svg',
-        name: 'web development',
-        description: 'Blog, E-Commerce'
+        icon: SoundDesign,
+        name: 'sound design',
+        description: 'Voice Over, Beat Making'
     },
     {
-        icon: '/src/assets/icons/game-development.svg',
-        name: 'web development',
-        description: 'Blog, E-Commerce'
+        icon: GameDesign,
+        name: 'game design',
+        description: 'Character Design, Props & Objects'
     },
     {
-        icon: '/src/assets/icons/Photographer.svg',
-        name: 'web development',
-        description: 'Blog, E-Commerce'
-    },
-    {
-        icon: '/src/assets/icons/Photographer.svg',
-        name: 'web development',
-        description: 'Blog, E-Commerce'
+        icon: Phtotographer,
+        name: 'photography',
+        description: 'portrait, product photography'
     }
 
 ]
@@ -65,6 +56,20 @@ if (services.value.length > 5) {
     boundedArray.value = services.value
 }
 </script>
+
+
+<template>
+    <div class="services flex flex-col items-center">
+        <Title class="text-center" :title="'my services'" />
+        <Description class="description text-center mb-12"
+            :description="'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum'" />
+        <div class="services flex flex-wrap gap-3">
+            <Servicevue :item="item" v-for="item in boundedArray" />
+        </div>
+    </div>
+</template>
+
+
 
 <style scoped lang="scss">
 .services {
