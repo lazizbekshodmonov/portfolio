@@ -36,3 +36,12 @@ export type Price = {
     description: string
     services: Services[]
 }
+
+export type Person = {
+    quality: string,
+    description: string,
+    status: 0 | 1 | 2 | 3 | 4 | 5,
+    name: string,
+    job: string,
+    profileImage: string
+}

@@ -33,6 +33,12 @@ const props = defineProps<{
     &:hover .hover_active {
         opacity: 1;
         transition: 0.5s;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+
+    }
+
+    &:hover {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
     }
 
     .hover_active {

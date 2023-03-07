@@ -129,7 +129,7 @@ plans.value = [
 
 <template>
     <div class="priceplans flex flex-col items-center">
-        <Title class="text-center" :title="'my services'" />
+        <Title class="text-center" :title="'Price plans'" />
         <Description class="description text-center mb-12"
             :description="'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum'" />
         <div class="plans flex justify-between gap-3  ">

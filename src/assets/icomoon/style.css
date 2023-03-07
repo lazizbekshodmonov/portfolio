@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?utkk8s');
-  src:  url('fonts/icomoon.eot?utkk8s#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?utkk8s') format('truetype'),
-    url('fonts/icomoon.woff?utkk8s') format('woff'),
-    url('fonts/icomoon.svg?utkk8s#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?b1t2g6');
+  src:  url('fonts/icomoon.eot?b1t2g6#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?b1t2g6') format('truetype'),
+    url('fonts/icomoon.woff?b1t2g6') format('woff'),
+    url('fonts/icomoon.svg?b1t2g6#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -35,6 +35,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-Star1:before {
+  content: "\e917";
+  color: #ffb400;
+}
 .icon-Check1:before {
   content: "\e915";
   color: #ffb400;

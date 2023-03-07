@@ -21,6 +21,8 @@ const props = defineProps<{
     width: calc(100% / 3 - 10px);
     max-width: 310px;
 
+
+
     .icon {
         min-width: 68px;
         min-height: 68px;

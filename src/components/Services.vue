@@ -38,6 +38,11 @@ services.value = [
         icon: Phtotographer,
         name: 'photography',
         description: 'portrait, product photography'
+    },
+    {
+        icon: Phtotographer,
+        name: 'photography',
+        description: 'portrait, product photography'
     }
 
 ]

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Social, Info, Languages, Skills } from '@/types'
-
+import Sv from '../cv/Lazizbek Shodmonov Resume.pdf'
 const icons: Social[] = [
     {
         icon: 'icon-Icons-facebook',
@@ -167,8 +167,8 @@ const extrSkills: string[] = [
                 <p class="line mt-6"></p>
             </div>
             <div class="resume_btn mb-6">
-                <a class="cv_download_btn flex justify-center items-center" href="../cv/Lazizbek Shodmonov Resume.pdf"
-                    download="cv.pdf">Download cv <span class="icon-download ml-5"></span></a>
+                <a class="cv_download_btn flex justify-center items-center" :href="Sv" download="cv.pdf">Download cv <span
+                        class="icon-download ml-5"></span></a>
             </div>
         </div>
     </div>
@@ -177,6 +177,7 @@ const extrSkills: string[] = [
 .main {
     width: 305px;
     overflow: hidden;
+    height: 1380px;
 
     .main-container {
         width: 305px;
