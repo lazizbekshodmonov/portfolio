@@ -314,19 +314,16 @@ const extrSkills: string[] = [
                 }
 
                 .scores {
+                    // display: flex;
+                    // align-items: center;
                     width: 100%;
-                    height: 4px;
+                    height: 6px;
                     border: 0.5px solid #FFB400;
                     border-radius: 30px;
                     padding-left: 1px;
 
                     p {
                         height: 2px;
-                        left: 41px;
-                        top: 624px;
-
-                        /* Yellow */
-
                         background: #FFB400;
                         border-radius: 30px;
                     }
