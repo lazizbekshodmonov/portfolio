@@ -130,9 +130,9 @@ plans.value = [
 <template>
     <div class="priceplans flex flex-col items-center">
         <Title class="text-center" :title="'Price plans'" />
-        <Description class="description text-center mb-12"
+        <Description class="mb-12"
             :description="'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum'" />
-        <div class="plans flex justify-between gap-3  ">
+        <div class="plans flex justify-between">
             <PricePlan v-for="plan in plans" :plan="plan" />
         </div>
     </div>
@@ -146,6 +146,10 @@ plans.value = [
 
     .description {
         width: 50%;
+    }
+
+    .plans {
+        width: 100%;
     }
 }
 </style>

@@ -13,8 +13,11 @@ const props = defineProps<{
 <style scoped lang="scss">
 .main {
     width: 100%;
+    display: flex;
+    justify-content: center;
 
     .description {
+        width: 50%;
         font-family: 'Inter';
         font-style: normal;
         font-weight: 400;
@@ -24,6 +27,7 @@ const props = defineProps<{
         text-transform: capitalize;
         font-feature-settings: 'calt' off, 'kern' off;
         color: #767676;
+
     }
 }
 </style>

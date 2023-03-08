@@ -45,3 +45,18 @@ export type Person = {
     job: string,
     profileImage: string
 }
+
+export type Course = {
+    schoolName: string,
+    studyDate: { start: Date, end: Date },
+    degree: string,
+    certificate: string,
+    description: string
+}
+export type Work = {
+    jobName: string,
+    durationOfActivity: { start: Date, end: Date },
+    runtimeType: string,
+    company: string,
+    description: string
+}

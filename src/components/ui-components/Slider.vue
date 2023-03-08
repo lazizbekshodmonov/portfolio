@@ -1,131 +1,153 @@
 <script setup lang="ts">
 import type { Person } from '@/types';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import { defineProps } from 'vue';
-import 'swiper/css';
-const props = defineProps<{
-    people: Person[]
-}>()
-console.log(props);
+import { ref } from 'vue';
+import { TransitionGroup } from 'vue'
+import Slide from './Slide.vue';
+import Talan from '/src/image/talan.png'
+import Tiana from '/src/image/tiana.png'
+import James from '/src/image/james.png'
+
+const people = ref<Person[]>([])
+people.value = [
+    {
+        quality: 'Amazing work!',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. Morbi donec amet....',
+        status: 5,
+        name: 'Tiana Philips',
+        job: 'Photographer',
+        profileImage: Talan
+    },
+    {
+        quality: 'Great Quality!',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. Morbi donec amet....',
+        status: 5,
+        name: 'Talan Westervelt',
+        job: 'Business man',
+        profileImage: Tiana
+    },
+    {
+        quality: 'Great Quality!',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. Morbi donec amet....',
+        status: 0,
+        name: 'James Gouse',
+        job: 'Graphic Designer',
+        profileImage: James
+    },
+    {
+        quality: 'Great Quality!',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. Morbi donec amet....',
+        status: 5,
+        name: 'Talan Westervelt',
+        job: 'Business man',
+        profileImage: Tiana
+    },
+    {
+        quality: 'Great Quality!',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. Morbi donec amet....',
+        status: 0,
+        name: 'James Gouse',
+        job: 'Graphic Designer',
+        profileImage: James
+    }
+
+]
 
 
-const onSwiper = (swiper: any) => {
-    console.log(swiper);
-};
-const onSlideChange = () => {
-    console.log('slide change');
-};
+
+const carusel = ref<Person[]>([...people.value])
+// const style = ref(`transform: translateX(0)`)
+
+let index: number = 0
+// setInterval(() => {
+//     // carusel.value.push(...people.value)
+//     // style.value = `transform: translateX(-${330 * index.value}px)`
+
+//     if (index == 3) {
+//         index = 0
+//     }
+//     carusel.value.push(people.value[index])
+//     carusel.value.splice(0, 1)
+//     console.log(index);
+//     index++
+// }, 3000)
+
 </script>
 
 <template>
-    <swiper class="slider flex" :slides-per-view="3" :space-between="27" @swiper="onSwiper" @slideChange="onSlideChange">
-        <swiper-slide v-for="person in people" class="slider_item bg-white p-6">
-            <div class="status mb-4">
-                <span class="icon-Star1 mr-2" v-for="item in 5"></span>
+    <div class="main_slider">
+
+        <div class="carusel">
+
+            <div class="swiper slider flex  pt-2 pb-2">
+                <Slide class="swiper-slide" v-for="person in carusel" :person="person" />
             </div>
-            <h2 class="quality text-start mb-5">{{ person.quality }}</h2>
-            <p class="description mb-7">{{ person.name.length > 115 ? person.description : person.description.substring(0,
-                113) + '.....' }}</p>
-            <div class="profile flex items center">
-                <div class="profile_image mr-6">
-                    <img :src="person.profileImage" alt="">
-                </div>
-                <div class="profile_info flex flex-col justify-center">
-                    <h3 class="name mb-1">{{ person.name.length < 14 ? person.name : person.name.substring(0, 12) + '...'
-                    }}</h3>
-                            <p class="job">{{ person.job }}</p>
-                </div>
-            </div>
-        </swiper-slide>
+        </div>
+        <div class="pagination flex justify-center">
+            <span class="pagination_item block bg-white cursor-pointer" :class="item == 1 ? 'pagination_item_active' : ''"
+                v-for="item in (people.length - 2)">
+            </span>
+        </div>
 
 
-
-
-    </swiper>
+    </div>
 </template>
 
 
 
 <style scoped lang="scss">
-.slider {
-    .slider_item {
-        width: 310px;
-        height: 323px;
-        box-sizing: border-box;
+.list-move,
+/* apply transition to moving elements */
+.list-enter-active,
+.list-leave-active {
+    transition: all 0.5s ease;
+}
 
-        .quality {
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 123.6%;
-            /* or 22px */
+.list-enter-from,
+.list-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+}
 
-            text-transform: capitalize;
+/* ensure leaving items are taken out of layout flow so that moving
+   animations can be calculated correctly. */
+.list-leave-active {
+    position: absolute;
+}
 
-            /* Black */
+.main_slider {
+    width: 100%;
+    height: max-content;
 
-            color: #2B2B2B;
+
+    .carusel {
+        overflow-x: auto;
+        transition: all 0.5s ease;
+
+        &::-webkit-scrollbar {
+            display: none;
         }
 
-        .description {
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 15px;
-            line-height: 24px;
-            text-transform: capitalize;
-            font-feature-settings: 'calt' off, 'kern' off;
-            color: #767676;
+        .slider {
+            width: max-content;
+            transition: all 0.5s ease;
+        }
+    }
+
+    .pagination {
+        margin-top: 50px;
+
+        .pagination_item {
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+            margin-left: 5px;
+            border-radius: 50%;
         }
 
-        .profile {
-            .profile_image {
-                width: 80px;
-                height: 80px;
-                border-radius: 50%;
-                background: #E1E1E1;
-                overflow: hidden;
+        .pagination_item_active {
+            background: #FFB400;
 
-                img {
-                    width: 100%;
-                }
-            }
-
-            .profile_info {
-                .name {
-                    font-family: 'Inter';
-                    font-style: normal;
-                    font-weight: 500;
-                    font-size: 18px;
-                    line-height: 123.6%;
-                    /* or 22px */
-
-                    text-transform: capitalize;
-
-                    /* Black */
-
-                    color: #2B2B2B;
-                }
-
-                .job {
-                    font-family: 'Inter';
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 15px;
-                    line-height: 24px;
-                    /* identical to box height, or 160% */
-
-                    text-transform: capitalize;
-                    font-feature-settings: 'calt' off, 'kern' off;
-
-                    /* Paragraph Font */
-
-                    color: #767676;
-                }
-            }
         }
-
     }
 }
 </style>

@@ -66,7 +66,7 @@ if (services.value.length > 5) {
 <template>
     <div class="services flex flex-col items-center">
         <Title class="text-center" :title="'my services'" />
-        <Description class="description text-center mb-12"
+        <Description class="mb-12"
             :description="'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum'" />
         <div class="services flex flex-wrap gap-3">
             <Servicevue :item="item" v-for="item in boundedArray" />

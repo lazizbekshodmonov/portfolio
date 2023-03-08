@@ -4,6 +4,8 @@ import AboutMe from '@/components/AboutMe.vue'
 import { onMounted } from 'vue';
 import PricePlans from '@/components/PricePlans.vue';
 import Recomendation from '@/components/Recomendation.vue';
+import Education from '@/components/Education.vue';
+import WorkHistory from '@/components/WorkHistory.vue';
 
 onMounted(() => {
   window.scrollTo({
@@ -18,6 +20,8 @@ onMounted(() => {
     <Services class="mb-18" />
     <PricePlans class="mb-18" />
     <Recomendation class="mb-18" />
+    <Education class="mb-18" />
+    <WorkHistory class="mb-18" />
   </div>
 </template>
   

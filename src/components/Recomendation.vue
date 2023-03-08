@@ -1,74 +1,20 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import type { Person } from '@/types/index'
 import Title from './ui-components/Title.vue';
 import Description from './ui-components/Description.vue';
 import Slider from './ui-components/Slider.vue';
-import Talan from '/src/image/talan.png'
-import Tiana from '/src/image/tiana.png'
-import James from '/src/image/james.png'
-const people = ref<Person[]>([])
-people.value = [
-    {
-        quality: 'Amazing work!',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. Morbi donec amet....',
-        status: 5,
-        name: 'Tiana Philips',
-        job: 'Photographer',
-        profileImage: Talan
-    },
-    {
-        quality: 'Great Quality!',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. Morbi donec amet....',
-        status: 5,
-        name: 'Talan Westervelt',
-        job: 'Business man',
-        profileImage: Tiana
-    },
-    {
-        quality: 'Great Quality!',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. Morbi donec amet....',
-        status: 0,
-        name: 'James Gouse',
-        job: 'Graphic Designer',
-        profileImage: James
-    },
-    {
-        quality: 'Amazing work!',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. Morbi donec amet....',
-        status: 5,
-        name: 'Tiana Philips',
-        job: 'Photographer',
-        profileImage: Talan
-    },
-    {
-        quality: 'Great Quality!',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. Morbi donec amet....',
-        status: 5,
-        name: 'Talan Westervelt',
-        job: 'Business man',
-        profileImage: Tiana
-    },
-    {
-        quality: 'Great Quality!',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. Morbi donec amet....',
-        status: 0,
-        name: 'James Gouse',
-        job: 'Graphic Designer',
-        profileImage: James
-    },
-]
-console.log(people);
+
+
+
 
 </script>
 
 <template>
     <div class="recomendation flex flex-col items-center">
         <Title class="text-center" :title="'recommendations'" />
-        <Description class="description text-center mb-12"
+        <Description class="mb-12"
             :description="'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum'" />
         <div class="people">
-            <Slider :people="people" />
+            <Slider />
         </div>
     </div>
 </template>
