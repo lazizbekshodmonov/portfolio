@@ -40,36 +40,46 @@ services.value = [
         description: 'portrait, product photography'
     },
     {
-        icon: Phtotographer,
-        name: 'photography',
-        description: 'portrait, product photography'
-    }
+        icon: WebDevelopment,
+        name: 'web development',
+        description: 'Blog, E-Commerce'
+    },
+    {
+        icon: UIUXDesign,
+        name: 'uI/uX design',
+        description: 'Mobile app, website design'
+    },
+    {
+        icon: SoundDesign,
+        name: 'sound design',
+        description: 'Voice Over, Beat Making'
+    },
 
 ]
-const boundedArray = ref<Service[]>([])
-const active = ref(false)
-if (services.value.length > 5) {
-    active.value = true
-    boundedArray.value = services.value.slice(0, 5)
-    boundedArray.value.push({
-        icon: '',
-        name: 'advertising',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. '
-    })
-} else {
-    active.value = true
-    boundedArray.value = services.value
-}
+// const boundedArray = ref<Service[]>([])
+// const active = ref(false)
+// if (services.value.length > 5) {
+//     active.value = true
+//     boundedArray.value = services.value.slice(0, 5)
+//     boundedArray.value.push({
+//         icon: '',
+//         name: 'advertising',
+//         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. '
+//     })
+// } else {
+//     active.value = true
+//     boundedArray.value = services.value
+// }
 </script>
 
 
 <template>
     <div class="services flex flex-col items-center">
-        <Title class="text-center" :title="'my services'" />
+        <Title class="text-center mb-6" :title="'my services'" />
         <Description class="mb-12"
             :description="'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum'" />
         <div class="services flex flex-wrap gap-3">
-            <Servicevue :item="item" v-for="item in boundedArray" />
+            <Servicevue :item="item" v-for="item in services" />
         </div>
     </div>
 </template>

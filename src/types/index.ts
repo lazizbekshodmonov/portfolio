@@ -60,3 +60,10 @@ export type Work = {
     company: string,
     description: string
 }
+
+export type Portfolio = {
+    type: 'UI Design' | 'Web template' | 'Logo' | 'Branding'
+    image: string,
+    description: string,
+    url: string
+}

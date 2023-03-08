@@ -10,7 +10,7 @@ import Slider from './ui-components/Slider.vue';
 
 <template>
     <div class="recomendation flex flex-col items-center">
-        <Title class="text-center" :title="'recommendations'" />
+        <Title class="text-center mb-6" :title="'recommendations'" />
         <Description class="mb-12"
             :description="'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum'" />
         <div class="people">
