@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from 'vue';
 import type { Course } from '@/types/index'
 const props = defineProps<{
     course: Course

@@ -19,7 +19,6 @@
 
 <script setup lang="ts">
 import type { Price } from '@/types';
-
 const props = defineProps<{
     plan: Price
 }>()

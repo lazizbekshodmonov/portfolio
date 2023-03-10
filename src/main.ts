@@ -1,3 +1,4 @@
+// import { VueGoogleMaps } from '@fawmi/vue-google-maps';
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
@@ -11,5 +12,10 @@ const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
-
+// app.use(VueGoogleMaps(), {
+//     load: {
+//         key: '9cb61e1cde391c4d',
+//         libraries: 'places',
+//     }
+// })
 app.mount('#app')

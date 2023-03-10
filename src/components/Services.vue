@@ -2,8 +2,8 @@
 import type { Service } from '@/types';
 import { ref } from 'vue';
 import Description from './ui-components/Description.vue';
-import Servicevue from './ui-components/Service.vue';
 import Title from './ui-components/Title.vue';
+import Servicevue from './ui-components/Service.vue';
 //Icons
 
 import WebDevelopment from "/src/assets/icons/coding.svg"
@@ -89,9 +89,5 @@ services.value = [
 <style scoped lang="scss">
 .services {
     width: 100%;
-
-    .description {
-        width: 50%;
-    }
 }
 </style>

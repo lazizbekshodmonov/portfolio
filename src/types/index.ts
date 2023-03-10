@@ -67,3 +67,14 @@ export type Portfolio = {
     description: string,
     url: string
 }
+
+export type Blog = {
+    img: string,
+    title: string,
+    description: string
+}
+
+export type ContactInfo = {
+    icon: string,
+    items: { key: string, value: string }[]
+}

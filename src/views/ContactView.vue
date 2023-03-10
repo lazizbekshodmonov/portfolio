@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
-
+import Contact from '@/components/Contact.vue';
+import Map from '@/components/Map.vue';
 onMounted(() => {
     window.scrollTo({
         top: 0,
@@ -9,8 +10,9 @@ onMounted(() => {
 })
 </script>
 <template>
-    <main class="main ">
-        <h1>Contact page</h1>
+    <main class="main">
+        <Contact class="mb-18" />
+        <Map />
     </main>
 </template>
   
