@@ -8,7 +8,7 @@ const props = defineProps<{
 
 <template>
     <div class="info_item bg-white p-6 flex items-center justify-between flex-col">
-        <div class="icon flex items-between justify-center">
+        <div class="icon flex items-center justify-center">
             <span :class="contactItem.icon"></span>
         </div>
         <div class="items flex justify-between" v-for="item in contactItem.items">
